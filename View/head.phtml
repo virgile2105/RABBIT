@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>White Rabbit</title>
+</head>
+
+<body>
+
+<header id=”mainheader” class=“branding” role=“banner”>
+    <img src="Assets/Img/rabbit.jpg">
+    <H1>Follow The White Rabbit</H1>
+
+
+    <?php if (array_key_exists("error",$_SESSION)):?>
+        <?= $_SESSION["error"]?>
+    <?php endif ?>
+
+
+    <?php if(array_key_exists("id",$_SESSION)):?>
+
+
+        <p>Welcome back <?=$_SESSION["name"] ?></p>
+        <p><a href="logout.php">logout</a></p>
+
+    <?php else: ?>
+        <form method="post" action="login.php">
+            <input type="text" name="login">
+            <input type="password" name="password">
+            <input type="submit" value="Down the rabbit hole">
+        </form>
+
+        <a id="inscription" href="inscription.php"> Pas encore inscrit ?</a>
+    <?php endif ?>
+
+
+
+</header>
+
+
+<nav id=”main” role=“navigation”>
+    <ul>
+        <li>
+            <a>            </a>
+        </li>
+    </ul>
+
+
+
+</nav>
