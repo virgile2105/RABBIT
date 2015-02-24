@@ -26,7 +26,7 @@ class Model_User
     public function createUser($login, $password, $mail)
     {
         $newUser = $this->db->create
-                    ("INSERT INTO USERS (name, password, mail)
+                    ("INSERT INTO users (name, password, mail)
                       VALUES (:name , :password , :mail)"
                     ,array("name"=>$login,"password"=>$password,"mail"=>$mail));
 

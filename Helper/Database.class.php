@@ -16,7 +16,7 @@ Class Helper_Database
     {
         $query = $this->db->prepare($query);
         $query->execute($data);
-        $res = $query->fetchAll();
+        $res = $query->fetchAll(PDO::FETCH_ASSOC);
 
         return $res;
     }
@@ -25,7 +25,7 @@ Class Helper_Database
     {
         $query = $this->db->prepare($query);
         $query->execute($data);
-        $res = $query->fetch();
+        $res = $query->fetch(PDO::FETCH_ASSOC);
 
         return $res;
     }
@@ -35,6 +35,7 @@ Class Helper_Database
         $query->execute($data);
         return $this->db->lastInsertId();
     }
+
 }
 
 

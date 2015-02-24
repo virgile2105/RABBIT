@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>White Rabbit</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="Assets/Js/actions.js"></script>
+    <link href="Assets/CSS/style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -30,7 +33,20 @@
             <input type="submit" value="Down the rabbit hole">
         </form>
 
-        <a id="inscription" href="inscription.php"> Pas encore inscrit ?</a>
+        <a href="#" id="inscription" > Pas encore inscrit ?</a>
+
+        <form id="wrap" class="wrap hide" action="inscription.php" method="post">
+
+            <input type="text" placeholder="Votre nom" name="createLogin">
+            <input type="text" placeholder="Votre mail" name="createMail">
+            <input type="text" placeholder="Votre mode passe" name="createPassword">
+
+            <input type="submit" value="S'inscrire">
+        </form>
+
+
+
+
     <?php endif ?>
 
 
