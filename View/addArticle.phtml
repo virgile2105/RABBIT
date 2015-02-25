@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>White RAbbit</title>
+</head>
+<body>
+    <form action="addArticle.php" method="post" enctype="multipart/form-data">
+        <input type="text" name="newTitle" placeholder="votre titre"><br>
+        <input type="text" name="newCat" placeholder="Les categories"><br>
+        <input type="file" name="imageLoader[]" multiple><br>
+        <input type="text" name="newCaption" placeholder="Caption"><br>
+        <textarea name="newContent" placeholder="Content" rows="4" cols="50" ></textarea>
+
+        <input type="submit" value="créer">
+    </form>
+</body>
+</html>

@@ -10,6 +10,7 @@ Class Helper_Database
     public function __construct()
     {
         $this->db = new PDO("mysql:host=localhost;dbname=rabbit","root","troiswa");
+        $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
 
     public function fetchAll($query, $data = array())
@@ -31,9 +32,12 @@ Class Helper_Database
     }
     public function create($query, $data= array())
     {
+
         $query = $this->db->prepare($query);
         $query->execute($data);
+
         return $this->db->lastInsertId();
+
     }
 
 }

@@ -1,3 +1,46 @@
 .hide{
     display:none;
 }
+#mainheader{
+}
+#logo{
+    width:80px;
+    display: inline-block;
+}
+h1{
+    display: inline-block;
+    vertical-align: top;
+
+}
+section .norm{
+    background-color: beige;
+    width: 75%;
+    margin: auto;
+}
+section .norm .disp{
+    width: 100%;
+    margin: auto;
+}
+#cont{
+    position: relative;
+}
+#control {
+    opacity: 0;
+    background: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    top:0;
+    height:20%;
+    width:100%;
+}
+#control:hover{
+    opacity: 1;
+
+}
+#controlers{
+font-size: 100px;
+    width:25%;
+    margin: auto;
+    height:100%;
+    display: block;
+
+}

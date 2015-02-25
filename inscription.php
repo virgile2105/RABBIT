@@ -5,6 +5,7 @@ session_start();
 require_once("Helper/Database.class.php");
 require_once("Model/User.class.php");
 
+
 if (array_key_exists("createPassword", $_POST)
     && array_key_exists("createLogin", $_POST)
     && array_key_exists("createMail", $_POST)
