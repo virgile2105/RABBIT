@@ -17,9 +17,10 @@ if (array_key_exists("newTitle", $_POST)
 
     for($i=0;$i<sizeof($_FILES['imageLoader']['name']);$i++)
     {
-        move_uploaded_file($_FILES['imageLoader']['tmp_name'][$i],'Assets/Img/Art'.uniqid()."_".$_FILES['imageLoader']['name'][$i]);
+        $imgName=uniqid()."_".$_FILES['imageLoader']['name'][$i];
+        move_uploaded_file($_FILES['imageLoader']['tmp_name'][$i],'Assets/Img/Art/'.$imgName);
 
-        $image.=$_FILES['imageLoader']['name'][$i].",";
+        $image.=$imgName.",";
 
     }
 
@@ -28,7 +29,7 @@ if (array_key_exists("newTitle", $_POST)
     if ($newPost != false)
     {
 
-        var_dump($_FILES);
+        header("location: index.php");
     }
     else
     {

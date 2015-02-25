@@ -35,8 +35,15 @@ Class Helper_Database
 
         $query = $this->db->prepare($query);
         $query->execute($data);
-
         return $this->db->lastInsertId();
+
+    }
+    public function delete($query, $data= array())
+    {
+
+        $query = $this->db->prepare($query);
+        $query->execute($data);
+        
 
     }
 

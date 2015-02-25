@@ -26,4 +26,15 @@ class Model_Posts
         return $addArticle;
     }
 
+    public function deletePost($post)
+    {
+       $this->db->delete
+        ("DELETE FROM posts WHERE id=:id LIMIT 1"
+        ,array('id'=>$post));
+
+
+    }
+
+
+
 }
