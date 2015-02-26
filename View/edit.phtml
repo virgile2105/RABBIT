@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <link href="Assets/CSS/style.css" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="Assets/Js/actions.js"></script>
+    <meta charset="UTF-8">
+    <title>Edit</title>
+</head>
+<body>
+        <form action="edit.php" method="post" enctype="multipart/form-data">
+            <input type="hidden" value="<?=$post["id"]?>" name="postId">
+            <input type="text" value="<?=$post["title"]?>" name="changeTitle">
+            <input type="text" value="<?=$post["caption"]?> "name="changeCaption">
+            <input type="text" value="<?=$post["category"]?>" name="changeCategory"><br>
+            <textarea cols="50" rows="8" name="changeContent"><?=$post["content"]?></textarea ><br>
+
+            <?php $pieces = explode(",", $post['image_src']);?>
+
+            <?php foreach($pieces as $value) :?>
+                <?php if(empty($value)==false): ?>
+                    <span>
+                    <img class="edit" src="Assets/Img/Art/<?=$value?>">
+                    <a data-postid="<?=$post["id"]?>" data-imgname="<?=$value?>">X</a>
+                    </span>
+                <?php endif ?>
+            <?php endforeach ?>
+
+            <input id="STR" style="width:700px;" type="hidden" value="<?=$post['image_src']?>"><br>
+            <input type="file" name="imageLoader[]" multiple><br>
+            <br>
+
+            <input type="submit">
+        </form>
+
+</body>
+
+</html>

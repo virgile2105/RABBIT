@@ -35,6 +35,32 @@ class Model_Posts
 
     }
 
+    public function getPost($select)
+    {
+        $getPost=$this->db->fetch
+        ("SELECT * FROM posts WHERE id=:id LIMIT 1"
+            ,array('id'=>$select));
+
+        return $getPost;
+    }
+
+    public function remImg($name,$id)
+    {
+       $this->db->update
+        ("UPDATE posts SET image_src=:name WHERE id=:id LIMIT 1"
+            ,array('id'=>$id,'name'=>$name));
+
+
+    }
+    public function modifyPost($title,$caption,$category,$content,$image,$id)
+    {
+        $modPost=$this->db->update
+        ("UPDATE posts SET caption=:caption,content=:content,image_src=:image,title=:title,category=:category
+          WHERE id=:id LIMIT 1"
+            ,array('id'=>$id,'title'=>$title,'caption'=>$caption,"category"=>$category,"content"=>$content,"image"=>$image));
+
+        return $modPost;
+    }
 
 
 }

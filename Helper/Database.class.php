@@ -46,7 +46,14 @@ Class Helper_Database
         
 
     }
+    public function update($query, $data= array())
+    {
 
+        $query = $this->db->prepare($query);
+        $query->execute($data);
+
+
+    }
 }
 
 
